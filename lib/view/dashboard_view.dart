@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dashboard/view/area_of_circle.dart';
 import 'package:flutter_dashboard/view/arithmetic_view.dart';
 import 'package:flutter_dashboard/view/simple_interest_view.dart';
 
@@ -42,7 +43,7 @@ class DashboardView extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ArithmeticView()),
+                        builder: (context) => const CircleAreaCalculator()),
                   );
                 },
                 child: const Column(
