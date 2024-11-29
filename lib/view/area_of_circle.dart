@@ -51,9 +51,12 @@ class _CircleAreaCalculatorState extends State<CircleAreaCalculator> {
               ),
             ),
             const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: _calculateArea,
-              child: const Text('Calculate'),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: _calculateArea,
+                child: const Text('Calculate'),
+              ),
             ),
             const SizedBox(height: 16),
             Text(
