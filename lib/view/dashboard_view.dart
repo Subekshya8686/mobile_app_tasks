@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dashboard/view/area_of_circle.dart';
 import 'package:flutter_dashboard/view/arithmetic_view.dart';
+import 'package:flutter_dashboard/view/column_view.dart';
+import 'package:flutter_dashboard/view/container_view.dart';
+import 'package:flutter_dashboard/view/load_image_view.dart';
 import 'package:flutter_dashboard/view/simple_interest_view.dart';
 
 class DashboardView extends StatelessWidget {
@@ -17,7 +20,7 @@ class DashboardView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: GridView.count(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           children: [
             Card(
               child: InkWell(
@@ -72,7 +75,60 @@ class DashboardView extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
+            Card(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ColumnView()),
+                  );
+                },
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.ac_unit),
+                    Text('Column View'),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ContainerView()),
+                  );
+                },
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.ac_unit),
+                    Text('Container View'),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoadImageView()),
+                  );
+                },
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.ac_unit),
+                    Text('Load Image View'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
