@@ -3,7 +3,9 @@ import 'package:flutter_dashboard/view/area_of_circle.dart';
 import 'package:flutter_dashboard/view/arithmetic_view.dart';
 import 'package:flutter_dashboard/view/column_view.dart';
 import 'package:flutter_dashboard/view/container_view.dart';
+import 'package:flutter_dashboard/view/flexible_expanded_view.dart';
 import 'package:flutter_dashboard/view/load_image_view.dart';
+import 'package:flutter_dashboard/view/show_snackbar_view.dart';
 import 'package:flutter_dashboard/view/simple_interest_view.dart';
 
 class DashboardView extends StatelessWidget {
@@ -21,6 +23,8 @@ class DashboardView extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: GridView.count(
           crossAxisCount: 2,
+          crossAxisSpacing: 10, // Spacing between columns
+          mainAxisSpacing: 10, // Spacing between rows
           children: [
             Card(
               child: InkWell(
@@ -125,6 +129,42 @@ class DashboardView extends StatelessWidget {
                   children: [
                     Icon(Icons.ac_unit),
                     Text('Load Image View'),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FlexibleExpandedView()),
+                  );
+                },
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.ac_unit),
+                    Text('Flexible Expanded View'),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ShowSnackbarView()),
+                  );
+                },
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.ac_unit),
+                    Text('Show SnackBar View'),
                   ],
                 ),
               ),
